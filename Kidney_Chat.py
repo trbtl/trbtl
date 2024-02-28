@@ -5,7 +5,6 @@
 # streamlit run app.py 
 
 import streamlit as st
-from streamlit_chat import message
 from langchain.llms import HuggingFaceHub
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
