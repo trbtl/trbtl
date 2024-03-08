@@ -71,17 +71,17 @@ Kidney Chat is brought to you by:\n
 
     hide_menu_style = """
             <style>
-            # #MainMenu {visibility: hidden;}
-            # footer {visibility: hidden;}
-            # footer:before {
-            #     content:'Brought to you by: The Road Back To Life'; 
-            #     visibility: visible;
-            #     display: block;
-            #     position: relative;
-            #     #background-color: red;
-            #     padding: 5px;
-            #     top: 2px;
-            # } 
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            footer:after {
+                content:'Brought to you by: The Road Back To Life'; 
+                visibility: visible;
+                display: block;
+                position: relative;
+                #background-color: red;
+                padding: 5px;
+                top: 2px;
+            } 
             .st-emotion-cache-1oe5cao {
                 padding-top: 3rem;
             }     
