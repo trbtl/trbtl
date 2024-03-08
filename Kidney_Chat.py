@@ -102,6 +102,12 @@ Kidney Chat is brought to you by:\n
             }
             .st-emotion-cache-139wi93 {
                 max-width: 90%;
+                padding: 1.5rem 1rem 1.5rem
+            }
+            .st-emotion-cache-uhkwx6 {
+                background-color: lightgrey;
+                border: solid grey;
+                border-radius: 10px;
             }
             </style>
             """
@@ -130,8 +136,8 @@ Kidney Chat is brought to you by:\n
             # print('----------------------------------------------------')
             # print('')
 
-            st.session_state['past'].append("Question: " + question)
-            st.session_state['generated'].append('Answer: ' + response['answer'])
+            st.session_state['past'].append("❓ Question: " + question)
+            st.session_state['generated'].append("✨ Answer: " + response['answer'])
             st.session_state['history'].append("Question: " + question) 
             st.session_state['history'].append(response['answer'])      
             
