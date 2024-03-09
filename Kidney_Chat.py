@@ -40,7 +40,6 @@ Follow Up Input: {question}
 """
 CUSTOM_QUESTION_PROMPT = PromptTemplate.from_template(custom_template)
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-# db = Chroma(persist_directory=index_store, embedding_function = embeddings, client_settings=CHROMA_SETTINGS)
 db = FAISS.load_local(index_store, embeddings)
 retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": target_source_chunks})
 memory = ConversationBufferMemory(memory_key="chat_history", input_key='question', output_key='answer',return_messages=True)
@@ -80,11 +79,20 @@ Kidney Chat is brought to you by:\n
                 position: relative;
                 #background-color: red;
                 padding: 5px;
-                top: 2px;
+                bottom: 2px;
             } 
+            [data-testid="stToolbar"] {visibility: hidden !important;}
             .st-emotion-cache-1oe5cao {
                 padding-top: 3rem;
-            }     
+            } 
+            #GithubIcon {
+                visibility: hidden;
+            }
+            .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+            .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+            .viewerBadge_text__1JaDK {
+                display: none;
+            }    
             .st-emotion-cache-17lntkn {
                 color: black;
             }
