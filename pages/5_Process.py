@@ -68,7 +68,7 @@ def embed_index(doc_list, embed_fn, index_store):
  
 #-------------------------------------------------------
     
-directory = 'xdocs'
+directory = 'docs'
     
 def save_file(uploaded_file):
    with open(os.path.join(directory, uploaded_file.name), "wb") as f:
