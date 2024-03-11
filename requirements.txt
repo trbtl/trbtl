@@ -4,5 +4,5 @@ streamlit==1.31.1
 sentence_transformers
 PyPDF2
 faiss-cpu
-streamlit-pdf-viewer
+streamlit-pdf-viewer==0.0.7
 
