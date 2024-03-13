@@ -10,12 +10,12 @@ from splitters import *
 import sqlite3
 import hashlib
 
-#-------------------------------------------------------
+#-----------------------------------------------------------------------
 
 hide_menu_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
+            MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
             footer:before {
                 content:'Brought to you by: The Road Back To Life'; 
                 visibility: visible;
@@ -24,19 +24,27 @@ hide_menu_style = """
                 #background-color: red;
                 padding: 5px;
                 top: 2px;
-            }   
+            } 
             .st-emotion-cache-lrlib {
                 padding-top: 3rem;
             }    
             .st-emotion-cache-17lntkn {
                 color: black;
+            }         
+            .st-emotion-cache-1y4p8pa {
+                width: 100%;
+                padding: 2rem 1rem 10rem;
+                max-width: 95%
+            }
+            .st-emotion-cache-1oe5cao {
+                padding-top: 3rem;
             }
             </style>
             """
-        
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+        # e.st-emotion-cache-1n5xqho
+st.markdown(hide_menu_style, unsafe_allow_html=True)  
 
-#-------------------------------------------------------
+#-----------------------------------------------------------------------
 
 if 'loggedin' not in st.session_state:
     st.session_state['loggedin'] = False
@@ -68,7 +76,7 @@ def embed_index(doc_list, embed_fn, index_store):
  
 #-------------------------------------------------------
     
-directory = 'docs'
+directory = 'xdocs'
     
 def save_file(uploaded_file):
    with open(os.path.join(directory, uploaded_file.name), "wb") as f:
