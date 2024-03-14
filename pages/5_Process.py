@@ -92,7 +92,7 @@ def embed_index(doc_list, embed_fn, index_store):
  
 #-------------------------------------------------------
     
-directory = 'xdocs'
+directory = 'docs'
     
 def save_file(uploaded_file):
    with open(os.path.join(directory, uploaded_file.name), "wb") as f:
@@ -123,7 +123,7 @@ def signin(username, password):
 def show_process():
     if st.session_state['loggedin'] == True:
         embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        index_store = 'dbx'
+        index_store = 'db'
         source_files = []
 
         files = st.file_uploader(label="To import documents into the library:", type=['pdf', 'txt', 'csv'], accept_multiple_files=True)
