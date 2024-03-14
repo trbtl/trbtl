@@ -9,7 +9,7 @@ from langchain.llms import HuggingFaceHub
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain 
-# from apikey_hungingface import apikey_hungingface
+from apikey_hungingface import apikey_hungingface
 from langchain.prompts import PromptTemplate
 from langchain.vectorstores import FAISS
 import os
@@ -23,8 +23,8 @@ st.set_page_config(
 
 # Set Hugging Face Hub API token
 # Make sure to store your API token in the `apikey_hungingface.py` file
-# os.environ["HUGGINGFACEHUB_API_TOKEN"] = apikey_hungingface
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["apikey_hungingface"]
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = apikey_hungingface
+# os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["apikey_hungingface"]
 # st.write(st.secrets["apikey_hungingface"])
 # st.write(os.environ["HUGGINGFACEHUB_API_TOKEN"] )
 target_source_chunks = 6
