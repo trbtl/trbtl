@@ -2,22 +2,31 @@
 # python -m venv venv
 # venv\Scripts\activate
 # pip install -r requirements.txt
-# streamlit run app.py 
+# streamlit run Kidney_Chat.py
 
 import streamlit as st
 from langchain.llms import HuggingFaceHub
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain 
-from apikey_hungingface import apikey_hungingface
+# from apikey_hungingface import apikey_hungingface
 from langchain.prompts import PromptTemplate
 from langchain.vectorstores import FAISS
 import os
 
+st.set_page_config(
+    page_title="Kidney Chat",
+    page_icon="💬",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    ) 
+
 # Set Hugging Face Hub API token
 # Make sure to store your API token in the `apikey_hungingface.py` file
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = apikey_hungingface
-
+# os.environ["HUGGINGFACEHUB_API_TOKEN"] = apikey_hungingface
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["apikey_hungingface"]
+# st.write(st.secrets["apikey_hungingface"])
+# st.write(os.environ["HUGGINGFACEHUB_API_TOKEN"] )
 target_source_chunks = 6
 index_store = 'db'
 
@@ -57,7 +66,7 @@ qa = ConversationalRetrievalChain.from_llm(
 #-----------------------------------------------------
 
 # Create the Streamlit app
-def main():
+def main():  
     st.title('Kidney Chat 💬')
  
     # Sidebar contents
@@ -117,6 +126,12 @@ Kidney Chat is brought to you by:\n
                 border: solid grey;
                 border-radius: 10px;
             }
+            .st-emotion-cache-lrlib {
+                padding-top: 3rem;
+            }            
+            .st-emotion-cache-mcjgwn {
+                padding-top: 3rem;
+             }             
             </style>
             """
         
@@ -125,7 +140,7 @@ Kidney Chat is brought to you by:\n
 #-----------------------------------------------------    
 
     acontainer = st.container()
-    clear_button = st.sidebar.button("Clear Conversation", key="clear")
+    clear_button = st.sidebar.button("New Conversation", key="clear")
 
     # reset everything
     if clear_button:
