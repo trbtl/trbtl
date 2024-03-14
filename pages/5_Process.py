@@ -1,6 +1,3 @@
-# venv\Scripts\activate
-# pip install -r requirements.txt
-# streamlit run ingestst.py
 
 import streamlit as st
 import os
@@ -12,36 +9,55 @@ import hashlib
 
 #-----------------------------------------------------------------------
 
+st.set_page_config(    
+    page_title="Kidney Chat - Process",
+    page_icon="💬",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    )
+
 hide_menu_style = """
-            <style>
-            MainMenu {visibility: hidden;}
-                footer {visibility: hidden;}
-            footer:before {
-                content:'Brought to you by: The Road Back To Life'; 
-                visibility: visible;
-                display: block;
-                position: relative;
-                #background-color: red;
-                padding: 5px;
-                top: 2px;
-            } 
-            .st-emotion-cache-lrlib {
-                padding-top: 3rem;
-            }    
-            .st-emotion-cache-17lntkn {
-                color: black;
-            }         
-            .st-emotion-cache-1y4p8pa {
-                width: 100%;
-                padding: 2rem 1rem 10rem;
-                max-width: 95%
-            }
-            .st-emotion-cache-1oe5cao {
-                padding-top: 3rem;
-            }
-            </style>
-            """
-        # e.st-emotion-cache-1n5xqho
+        <style>
+        MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+        footer:before {
+            content:'Brought to you by: The Road Back To Life'; 
+            visibility: visible;
+            display: block;
+            position: relative;
+            #background-color: red;
+            padding: 5px;
+            top: 2px;
+        } 
+        [data-testid="stToolbar"] {visibility: hidden !important;}
+        .st-emotion-cache-1oe5cao {
+            padding-top: 3rem;
+        } 
+        #GithubIcon {
+            visibility: hidden;
+        }
+        .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+        .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+        .viewerBadge_text__1JaDK {
+            display: none;
+        }              
+        .st-emotion-cache-lrlib {
+            padding-top: 3rem;
+        }    
+        .st-emotion-cache-17lntkn {
+            color: black;
+        }         
+        .st-emotion-cache-1y4p8pa {
+            width: 100%;
+            padding: 2rem 1rem 10rem;
+            max-width: 95%
+        }
+        .st-emotion-cache-1oe5cao {
+            padding-top: 3rem;
+        }
+        </style>
+        """
+
 st.markdown(hide_menu_style, unsafe_allow_html=True)  
 
 #-----------------------------------------------------------------------
@@ -110,7 +126,7 @@ def show_process():
         index_store = 'dbx'
         source_files = []
 
-        files = st.file_uploader(label="Files", type=['pdf', 'txt', 'csv'], accept_multiple_files=True)
+        files = st.file_uploader(label="To import documents into the library:", type=['pdf', 'txt', 'csv'], accept_multiple_files=True)
 
         if st.button("Process"):
             st.markdown('---')
@@ -155,8 +171,10 @@ def show_signin():
                     st.rerun()
 
 #-------------------------------------------------------
-                    
-show_signin()       
-show_process() 
+def main():                  
+    show_signin()       
+    show_process() 
 
+if __name__ == "__main__":
+    main()
 #-------------------------------------------------------

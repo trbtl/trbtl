@@ -1,6 +1,15 @@
 
 import streamlit as st
 
+#-----------------------------------------------------------------------
+
+st.set_page_config(
+    page_title="Kidney Chat - Instructions",
+    page_icon="💬",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    )  
+
 hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden;}
@@ -26,6 +35,11 @@ hide_menu_style = """
         .viewerBadge_text__1JaDK {
             display: none;
         }    
+
+        .st-emotion-cache-1y4p8pa {
+            padding: 3rem 1rem 10rem;
+        }        
+
         .st-emotion-cache-17lntkn {
             color: black;
         }
@@ -50,19 +64,28 @@ hide_menu_style = """
             border: solid grey;
             border-radius: 10px;
         }
+        .st-emotion-cache-lrlib {
+            padding-top: 3rem;
+        } 
         </style>
         """
     
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
+#-----------------------------------------------------------------------
+
+st.title('Instructions')
+
 st.markdown("""
 <p>
 <h4>Kidney Chat: </h4>
-Type in your kidney related question in the chat box at the bottom of the page. Kidney Chat will generate an answer based on the documents it has been trained on. <br><br>Kidney Chat will remember what you’ve been chatting about, so you don’t have to start each new question as if it were the first time.  Think of it as you’re having a conversation with the Kidney Chat app. <br><br>To begin a new conversation, please click on the “Clear Conversation” button in the sidebar on the left side of the page.  It will clear out the conversation and won’t remember anything from the previous conversation.
+Type in your kidney related question in the chat box at the bottom of the page. Kidney Chat will generate an answer based on the documents it has been trained on. <br><br>Kidney Chat will remember what you’ve been chatting about, so you don’t have to start each new question as if it were the first time.  Think of it as you’re having a conversation with the Kidney Chat app. <br><br>To begin a new conversation, please click on the “New Conversation” button in the sidebar on the left side of the page.  It will clear out the current conversation you're having, start a new conversation, and won’t remember anything from the previous conversation.
 <h4>Instructions: </h4>This Page. <br>
 <h4>References: </h4>
-Here you will find, listed on the left side of the page, the documents utilized to train Kidney Chat.  Click on the name of a document and the contents will be displayed in the body of the page. <br>
+Here you will find, listed in the sidebar on the left side of the page, the documents utilized to train Kidney Chat.  Click on the name of a document and the contents will be displayed in the body of the page. <br>
 <h4>Process: </h4>
 This is a restricted part of Kidney Chat, available only to the administrators of the app. <br>
 </p>
 """,  unsafe_allow_html=True)
+
+#-----------------------------------------------------------------------
