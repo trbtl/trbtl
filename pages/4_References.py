@@ -94,7 +94,7 @@ def main():
             folder_path = './docs'  
             uploaded = os.path.join(folder_path, filename)
         
-            pdf_viewer(input=uploaded, width=1000)
+            pdf_viewer(input=uploaded, height=800, width=1000)
     
 #-----------------------------------------------------------------------
  
