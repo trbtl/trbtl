@@ -79,8 +79,31 @@ Kidney Chat is brought to you by:\n
 
     hide_menu_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
+            #MainMenu {
+                visibility: hidden;
+                }
+            header {
+                visibility: hidden;
+                height: 0%;
+                }
+            div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+            div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+            div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+            footer {
+                visibility: hidden;
+                }
             footer:after {
                 content:'Brought to you by: The Road Back To Life'; 
                 visibility: visible;
@@ -131,7 +154,10 @@ Kidney Chat is brought to you by:\n
             }            
             .st-emotion-cache-mcjgwn {
                 padding-top: 3rem;
-             }             
+             }          
+            .st-emotion-cache-1wm93xv {
+                padding: 1rem 1.5rem 1rem; 
+            }               
             </style>
             """
         
